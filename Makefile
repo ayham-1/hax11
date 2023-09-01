@@ -24,12 +24,14 @@ install:
 	install -d $(PREFIX)/$(LIB64)/
 	install -m 644 lib32/hax11.so $(PREFIX)/$(LIB32)/
 	install -m 644 lib64/hax11.so $(PREFIX)/$(LIB64)/
-	echo "export LD_PRELOAD=$(PREFIX)/\\\$$LIB/hax11.so " > $(PREFIX)/hax11.sh
+	echo "export LD_PRELOAD=$(PREFIX)/$(LIB32)/hax11.so " > $(PREFIX)/bin/hax11_x32.sh
+	echo "export LD_PRELOAD=$(PREFIX)/$(LIB64)/hax11.so " > $(PREFIX)/bin/hax11_x64.sh
 	chmod 755 $(PREFIX)/hax11.sh
 
 uninstall:
 	rm -f $(PREFIX)/$(LIB32)/hax11.so
 	rm -f $(PREFIX)/$(LIB64)/hax11.so
-	rm -f $(PREFIX)/hax11.sh
+	rm -f $(PREFIX)/bin/hax11_x32.sh
+	rm -f $(PREFIX)/bin/hax11_x64.sh
 
 .PHONY: all lib install
