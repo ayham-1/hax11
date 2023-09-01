@@ -24,7 +24,7 @@ install:
 	install -d $(PREFIX)/$(LIB64)/
 	install -m 644 lib32/hax11.so $(PREFIX)/$(LIB32)/
 	install -m 644 lib64/hax11.so $(PREFIX)/$(LIB64)/
-	echo "export LD_PRELOAD=$(PREFIX)/\\\$$LIB/hax11.so " > /etc/profile.d/hax11.sh
+	echo "export LD_PRELOAD=$(PREFIX)/\\\$$LIB/hax11.so " > $(PREFIX)/hax11.sh
 	chmod 755 /etc/profile.d/hax11.sh
 
 uninstall:
