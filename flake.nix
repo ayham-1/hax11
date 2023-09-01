@@ -1,5 +1,5 @@
 {
-    description = "libhax11";
+    description = "hax11";
 
     inputs = {
         nixpkgs.url = "nixpkgs/nixos-23.05";
@@ -12,7 +12,7 @@
         in {
             packages = {
                 default = pkgs.stdenv.mkDerivation {
-                    name = "libhax11";
+                    name = "hax11";
                     src = ./.;
 
                     nativeBuildInputs = with pkgs; [
